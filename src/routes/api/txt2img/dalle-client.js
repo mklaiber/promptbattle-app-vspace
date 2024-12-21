@@ -13,6 +13,7 @@ export async function createImage(prompt) {
 	if (!prompt) throw Error('Prompt is missing'); //Fix how to do error-stuff in Sveltekit?
 	console.log('...Calling Dalle API...');
 	const response = await openai.createImage({
+		model: "dall-e-3",
 		prompt: prompt,
 		n: 2,
 		size: '1024x1024'
